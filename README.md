@@ -1,12 +1,12 @@
-# how to install
+# How to install
 
 npm install
 
-# to build
+# To build
 
 npm build or tsc
 
-# to run
+# To run
 
 node ./dist/app.js --count <br/>
 node ./dist/app.js --filter=ry
