@@ -2,7 +2,7 @@
   "name": "cdp-recruitment-javascript",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "dist/app.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --pretty --transpile-only src/app.ts",
     "build": "tsc",
