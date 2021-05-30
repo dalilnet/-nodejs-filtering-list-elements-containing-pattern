@@ -47,7 +47,7 @@ function main() {
 
 		}
 
-		console.log("Bad request: ");
+		console.log("Your command does not contain the arguments");
 		return;
 
 	} else {

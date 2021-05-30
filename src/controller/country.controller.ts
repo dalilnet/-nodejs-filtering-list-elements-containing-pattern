@@ -3,7 +3,7 @@ import { Country } from './../models/country.model';
 import { Animal } from './../models/animal.model';
 /** import of models */
 
-const countriesRepository = require('../datas/data'); //I used require instead of import because it is a js file
+import countriesRepository from '../datas/data'; 
 
 
 /**
@@ -87,7 +87,7 @@ export class CountryController {
 
 	/**
 	 *
-	 *
+	 * the function retrieve the list of peopls filtered by name's animal
 	 * @private
 	 * @param {Country} country
 	 * @param {string} q
@@ -98,13 +98,16 @@ export class CountryController {
 
 		let filteredPeople: People[] = [];
 
+		// I browse the list to handle each people, we can use also forEach
 		for (let people of country.people) {
 
 			let animals = this.getFilteredAnimal(people, q);
+
+			// if the animal meets the criteria, it is added to the list
 			if (animals.length > 0) {
 				filteredPeople.push({ name: people.name, animals: animals });
 			}
-			
+
 		}
 
 		return filteredPeople;
@@ -127,7 +130,7 @@ export class CountryController {
 		people.animals.forEach((animal: Animal) => {
 
 			/** if the name contains the desired text, we add the animal in the list */
-			if (animal.name.includes(q)) {
+			if (animal.name.toLowerCase().includes(q.toLowerCase())) {
 				filteredAnimal.push(animal);
 			}
 
