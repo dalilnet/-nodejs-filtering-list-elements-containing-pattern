@@ -10,3 +10,7 @@ npm build or tsc
 
 node ./dist/app.js --count <br/>
 node ./dist/app.js --filter=ry
+
+# unit test
+
+npm test
